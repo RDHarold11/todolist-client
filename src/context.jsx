@@ -38,13 +38,15 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const updateItem = async () => {
+  const updateItem = async (e) => {
+    e.preventDefault();
     if (!isCreating) {
       try {
         await axios.patch(
           `https://api-todolist.up.railway.app/todo/${itemId}`,
           newTodo
         );
+        window.location.reload();
       } catch (error) {
         console.log(error);
       }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import { IoMdAddCircleOutline } from "react-icons/io";
 import Todo from "./Todo";
 
 const TodoContainer = () => {
@@ -9,13 +10,13 @@ const TodoContainer = () => {
     <div className="max-w-[1100px] px-5 py-5">
       <div>
         <button
-          className="bg-[#E06469] text-[#fff] px-4 py-2 rounded"
+          className=" text-[#E06469] px-2 py-2 rounded"
           onClick={() => {
             handleToggle();
             toggleCreating();
           }}
         >
-          Add a new todo
+          <IoMdAddCircleOutline size={40} />
         </button>
       </div>
       <div className="flex gap-3 flex-wrap mt-10">
