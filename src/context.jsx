@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
 
   const deleteItem = async (id) => {
     try {
-      await axios.delete(`https://api-todolist.up.railway.app/todo/${id}`);
+      await axios.delete(`https://todolist-api-ujer.onrender.com/todo/${id}`);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ const AppProvider = ({ children }) => {
     if (!isCreating) {
       try {
         await axios.patch(
-          `https://api-todolist.up.railway.app/todo/${itemId}`,
+          `https://todolist-api-ujer.onrender.com/todo/${itemId}`,
           newTodo
         );
         window.location.reload();
@@ -58,7 +58,7 @@ const AppProvider = ({ children }) => {
     e.preventDefault();
     if (isCreating) {
       try {
-        await axios.post("https://api-todolist.up.railway.app/todo", newTodo);
+        await axios.post("https://todolist-api-ujer.onrender.com/todo", newTodo);
         window.location.reload();
       } catch (error) {
         console.log(error);
@@ -68,7 +68,7 @@ const AppProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("https://api-todolist.up.railway.app/todo");
+      const res = await axios.get("https://todolist-api-ujer.onrender.com/todo");
       setTodo(res.data);
     } catch (error) {
       console.log(error);
